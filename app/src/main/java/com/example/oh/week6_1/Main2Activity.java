@@ -19,6 +19,7 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        setTitle("나의 맛집");
 
         e1 = (EditText)findViewById(R.id.e1);
         e2 = (EditText)findViewById(R.id.e2);
