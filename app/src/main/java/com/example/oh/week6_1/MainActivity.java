@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     TextView subject;
     Intent intent;
     int count = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void setListView() {
         arrayListString.add(arrayListData.get(count).getName());
-
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListString);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -121,8 +118,5 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
     }
 }

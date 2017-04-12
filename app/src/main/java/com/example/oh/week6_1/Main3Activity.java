@@ -2,23 +2,16 @@ package com.example.oh.week6_1;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
-import android.provider.ContactsContract;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Date;
-import java.util.Locale;
 
 public class Main3Activity extends AppCompatActivity {
     String name;
@@ -37,6 +30,7 @@ public class Main3Activity extends AppCompatActivity {
         receiveData();
         setData();
     }
+
     public void receiveData(){
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
@@ -56,7 +50,6 @@ public class Main3Activity extends AppCompatActivity {
         else if (type == 2)
             iv.setImageResource(R.drawable.pizza);
 
-
         TextView tName = (TextView) findViewById(R.id.name);
         TextView tTel = (TextView) findViewById(R.id.tel);
         TextView tMenu1 = (TextView) findViewById(R.id.mn1);
@@ -72,16 +65,13 @@ public class Main3Activity extends AppCompatActivity {
         tMeun3.setText(menu3);
         tHomepage.setText(homepage);
         tDate.setText(getDateString());
-
     }
 
     @TargetApi(Build.VERSION_CODES.N)
     public String getDateString(){
         long now = System.currentTimeMillis();
         Date date = new Date(now);
-
         SimpleDateFormat curDateFormat = new SimpleDateFormat("yyyy년 mm월 dd일");
-
         String str = curDateFormat.format(date);
         return str;
     }
@@ -90,7 +80,6 @@ public class Main3Activity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.cc :
                 finish();
-
                 break;
             case R.id.call :
                 startActivity(new Intent(Intent.ACTION_DIAL,
